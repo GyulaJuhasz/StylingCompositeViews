@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">StylingCompositeViews</string>
-    <string name="greeting_text">Hello, Readers!</string>
+    <string name="instruction">Press any of the buttons!</string>
 </resources>
