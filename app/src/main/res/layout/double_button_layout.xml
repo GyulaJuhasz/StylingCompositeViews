@@ -5,17 +5,16 @@
 
     <Button
         android:id="@+id/left_button"
+        style="?leftButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center" />
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/right_button"
+        style="?rightButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="0dp"
-        android:layout_weight="1"
-        android:gravity="center" />
+        android:layout_weight="1" />
 
 </merge>

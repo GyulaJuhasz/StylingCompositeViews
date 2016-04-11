@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Style attributes for the DoubleButton component. -->
     <declare-styleable name="DoubleButton">
         <!-- Text of the left button. -->
@@ -12,4 +11,8 @@
     <!-- Theme attribute for the default style for the DoubleButton component. -->
     <attr name="doubleButtonStyle" format="reference" />
 
+    <!-- Theme attribute for controlling the style of the left button in the DoubleButton component. -->
+    <attr name="leftButtonStyle" format="reference" />
+    <!-- Theme attribute for controlling the style of the right button in the DoubleButton component. -->
+    <attr name="rightButtonStyle" format="reference" />
 </resources>

@@ -6,7 +6,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <!-- Default style for the DoubleButton component. -->
+        <!-- Default styles for the DoubleButton component. -->
         <item name="doubleButtonStyle">@style/DefaultDoubleButtonStyle</item>
+        <item name="leftButtonStyle">@style/DefaultLeftButtonStyle</item>
+        <item name="rightButtonStyle">@style/DefaultRightButtonStyle</item>
     </style>
 </resources>

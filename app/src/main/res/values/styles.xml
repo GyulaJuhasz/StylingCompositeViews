@@ -1,4 +1,13 @@
 <resources>
 
     <style name="DefaultDoubleButtonStyle"></style>
+
+    <style name="DefaultLeftButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <style name="DefaultRightButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:gravity">right|center_vertical</item>
+    </style>
+
 </resources>
