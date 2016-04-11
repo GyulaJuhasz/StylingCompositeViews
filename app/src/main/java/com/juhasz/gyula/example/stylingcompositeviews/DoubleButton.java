@@ -80,7 +80,8 @@ public class DoubleButton extends LinearLayout {
         leftButton.setOnClickListener(clickListener);
         rightButton.setOnClickListener(clickListener);
 
-        TypedArray doubleButtonTypedArray = context.obtainStyledAttributes(attrs, R.styleable.DoubleButton, defStyleAttr, 0);
+        TypedArray doubleButtonTypedArray =
+                context.obtainStyledAttributes(attrs, R.styleable.DoubleButton, defStyleAttr, 0);
         setLeftButtonText(doubleButtonTypedArray.getString(R.styleable.DoubleButton_leftButtonText));
         setRightButtonText(doubleButtonTypedArray.getString(R.styleable.DoubleButton_rightButtonText));
         doubleButtonTypedArray.recycle();
