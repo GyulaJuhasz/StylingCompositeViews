@@ -10,28 +10,51 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private DoubleButton doubleButton;
+    private DoubleButton topDoubleButton;
+    private DoubleButton bottomDoubleButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_layout);
-        doubleButton = (DoubleButton) findViewById(R.id.double_button);
-        doubleButton.setDoubleButtonClickListener(new DoubleButton.DoubleButtonClickListener() {
-            @Override
-            public void onLeftButtonClicked(@NonNull DoubleButton doubleButton) {
-                showSnackBarMessage("Left button clicked.");
-            }
+        topDoubleButton = (DoubleButton) findViewById(R.id.top_double_button);
+        bottomDoubleButton = (DoubleButton) findViewById(R.id.bottom_double_button);
 
-            @Override
-            public void onRightButtonClicked(@NonNull DoubleButton doubleButton) {
-                showSnackBarMessage("Right button clicked.");
-            }
-        });
+        final DoubleButton.DoubleButtonClickListener doubleButtonClickListener =
+                new DoubleButton.DoubleButtonClickListener() {
+                    @Override
+                    public void onLeftButtonClicked(@NonNull DoubleButton doubleButton) {
+                        String message = null;
+                        if (doubleButton == topDoubleButton) {
+                            message = "Top left button clicked.";
+                        } else if (doubleButton == bottomDoubleButton) {
+                            message = "Bottom left button clicked.";
+                        }
+                        if (message != null) {
+                            showSnackBarMessage(message);
+                        }
+                    }
+
+                    @Override
+                    public void onRightButtonClicked(@NonNull DoubleButton doubleButton) {
+                        String message = null;
+                        if (doubleButton == topDoubleButton) {
+                            message = "Top right button clicked.";
+                        } else if (doubleButton == bottomDoubleButton) {
+                            message = "Bottom right button clicked.";
+                        }
+                        if (message != null) {
+                            showSnackBarMessage(message);
+                        }
+                    }
+                };
+
+        topDoubleButton.setDoubleButtonClickListener(doubleButtonClickListener);
+        bottomDoubleButton.setDoubleButtonClickListener(doubleButtonClickListener);
     }
 
     private void showSnackBarMessage(final @NonNull CharSequence message) {
-        Snackbar.make(doubleButton, message, Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(topDoubleButton, message, Snackbar.LENGTH_SHORT).show();
     }
 
 }

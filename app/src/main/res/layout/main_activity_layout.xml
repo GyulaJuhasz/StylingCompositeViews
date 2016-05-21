@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/double_button"
         android:gravity="center"
         android:text="@string/instruction" />
 
     <com.juhasz.gyula.example.stylingcompositeviews.DoubleButton
-        android:id="@+id/double_button"
+        android:id="@+id/top_double_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        app:leftButtonText="LEFT"
-        app:rightButtonText="RIGHT" />
+        app:leftButtonText="TOP LEFT"
+        app:rightButtonText="TOP RIGHT" />
 
-</RelativeLayout>
+    <com.juhasz.gyula.example.stylingcompositeviews.DoubleButton
+        android:id="@+id/bottom_double_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftButtonText="BOTTOM LEFT"
+        app:rightButtonText="BOTTOM RIGHT" />
+</LinearLayout>
 
