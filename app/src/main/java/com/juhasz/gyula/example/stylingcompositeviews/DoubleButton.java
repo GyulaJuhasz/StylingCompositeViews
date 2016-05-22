@@ -73,18 +73,31 @@ public class DoubleButton extends LinearLayout {
         super(context, attrs, defStyleAttr);
         setOrientation(LinearLayout.HORIZONTAL);
 
-        LayoutInflater.from(context).inflate(R.layout.double_button_layout, this);
-        leftButton = (Button) findViewById(R.id.left_button);
-        rightButton = (Button) findViewById(R.id.right_button);
+        TypedArray doubleButtonTypedArray =
+                context.obtainStyledAttributes(attrs, R.styleable.DoubleButton, defStyleAttr, 0);
+        int leftButtonStyleAttribute =
+                doubleButtonTypedArray.getResourceId(R.styleable.DoubleButton_leftButtonStyle, 0);
+        int rightButtonStyleAttribute = doubleButtonTypedArray.getResourceId(R.styleable.DoubleButton_rightButtonStyle,
+                0);
+        String leftText = doubleButtonTypedArray.getString(R.styleable.DoubleButton_leftButtonText);
+        String rightText = doubleButtonTypedArray.getString(R.styleable.DoubleButton_rightButtonText);
+        doubleButtonTypedArray.recycle();
+
+        LayoutParams childButtonParams = new LayoutParams(0, LayoutParams.WRAP_CONTENT);
+        childButtonParams.weight = 1.0f;
+
+        leftButton = new Button(context, attrs, leftButtonStyleAttribute);
+        rightButton = new Button(context, attrs, rightButtonStyleAttribute);
+
+        addView(leftButton, childButtonParams);
+        addView(rightButton, childButtonParams);
+
+        setLeftButtonText(leftText);
+        setRightButtonText(rightText);
 
         leftButton.setOnClickListener(clickListener);
         rightButton.setOnClickListener(clickListener);
 
-        TypedArray doubleButtonTypedArray =
-                context.obtainStyledAttributes(attrs, R.styleable.DoubleButton, defStyleAttr, 0);
-        setLeftButtonText(doubleButtonTypedArray.getString(R.styleable.DoubleButton_leftButtonText));
-        setRightButtonText(doubleButtonTypedArray.getString(R.styleable.DoubleButton_rightButtonText));
-        doubleButtonTypedArray.recycle();
     }
 
     /**

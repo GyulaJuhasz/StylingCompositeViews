@@ -2,6 +2,10 @@
 <resources>
     <!-- Style attributes for the DoubleButton component. -->
     <declare-styleable name="DoubleButton">
+        <!-- Style attribute of the left button.  -->
+        <attr name="leftButtonStyle" format="reference" />
+        <!-- Style attribute of the right button.  -->
+        <attr name="rightButtonStyle" format="reference" />
         <!-- Text of the left button. -->
         <attr name="leftButtonText" format="string" />
         <!-- Text of the right button. -->
@@ -11,8 +15,17 @@
     <!-- Theme attribute for the default style for the DoubleButton component. -->
     <attr name="doubleButtonStyle" format="reference" />
 
-    <!-- Theme attribute for controlling the style of the left button in the DoubleButton component. -->
-    <attr name="leftButtonStyle" format="reference" />
-    <!-- Theme attribute for controlling the style of the right button in the DoubleButton component. -->
-    <attr name="rightButtonStyle" format="reference" />
+    <!-- Theme attribute for the top DoubleButton on the example screen. -->
+    <attr name="topDoubleButtonStyle" format="reference" />
+    <!-- Theme attribute for the bottom DoubleButton on the example screen. -->
+    <attr name="bottomDoubleButtonStyle" format="reference" />
+    <!-- Theme attribute for the left button's style in the top DoubleButton. -->
+    <attr name="topLeftButtonStyle" format="reference" />
+    <!-- Theme attribute for the right button's style in the top DoubleButton. -->
+    <attr name="topRightButtonStyle" format="reference" />
+    <!-- Theme attribute for the left button's style in the bottom DoubleButton. -->
+    <attr name="bottomLeftButtonStyle" format="reference" />
+    <!-- Theme attribute for the right button's style in the bottom DoubleButton. -->
+    <attr name="bottomRightButtonStyle" format="reference" />
+
 </resources>
