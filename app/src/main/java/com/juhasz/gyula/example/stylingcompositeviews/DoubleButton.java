@@ -5,9 +5,9 @@ import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -86,8 +86,8 @@ public class DoubleButton extends LinearLayout {
         LayoutParams childButtonParams = new LayoutParams(0, LayoutParams.WRAP_CONTENT);
         childButtonParams.weight = 1.0f;
 
-        leftButton = new Button(context, attrs, leftButtonStyleAttribute);
-        rightButton = new Button(context, attrs, rightButtonStyleAttribute);
+        leftButton = new AppCompatButton(context, attrs, leftButtonStyleAttribute);
+        rightButton = new AppCompatButton(context, attrs, rightButtonStyleAttribute);
 
         addView(leftButton, childButtonParams);
         addView(rightButton, childButtonParams);
